@@ -1,0 +1,22 @@
+<p>
+	Using a getter to pipe onto an observable and manipulate data will always return a new instance every time the
+	getter is called.
+	<br>
+	<br>
+  Can this cause performance issues?
+	<br>
+	<br>
+  Take a look at the console log. The getter that pipes onto the observable returns a new instance every change detection cycle.
+	<br>
+	<br>
+  The getter that just returns an observable without piping onto it is always the same instance.
+</p>
+
+	<p>
+		Data from observable getter1: {{ test1 | async}}
+	</p>
+	<p>
+		Data from observable getter2: {{ test2 | async}}
+	</p>
+
+	<button (click)="onButtonClick()">Emit new state</button>
